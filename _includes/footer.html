@@ -1,0 +1,56 @@
+<footer class="site-footer">
+    
+    <div class="footer-heading flex-start">{{site.title | escape}}</div>
+    
+    <div class="flex-start">
+        <p>{{ site.description | escape }}</p>
+    </div>
+
+    <div class="footer-col-wrapper footer-row">
+        <div class="footer-col footer-col-1">
+            <div class="footer-col-heading"> Contact </div>
+            <ul class="contact-list">
+                {% if site.contact_email %}
+                    <li><a class="u-email" href="mailto:{{site.contact_email}}">{{ site.contact_email }}</a></li>
+                {% endif %}
+                <li><a class="" href="/{{ active_lang}}/imprint">Imprint</a></li>
+            </ul>
+        </div>
+        
+
+        <div class="footer-col footer-col-2">
+            <div class="footer-col-heading">Company</div>
+            <ul >
+                <li><a class="" href="/{{ active_lang}}/about">About</a></li>
+                <li><a class="" href="/{{ active_lang}}/imprint">Imprint</a></li>
+                <li><a class="" href="/{{ active_lang}}/company">Company</a></li>
+                <li><a class="" href="https://blog.polypheny.com">Blog</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col footer-col-3">
+            <div class="footer-col-heading"> Support Channels </div>
+            <ul >
+                {% if site.support_email %}
+                    <li><a class="u-email" href="mailto:{{site.support_email}}">{{ site.support_email }}</a></li>
+                {% endif %}
+                <li><a class="" href="https://github.com/polypheny/Polypheny-DB/issues" target="_blank">Issues</a></li>
+                <li><a class="" href="https://github.com/polypheny/Polypheny-DB/issues/new/choose target="_blank"">Community</a></li>
+                <li><a class="" href="https://chat.polypheny.org">Discord</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col footer-col-4"> 
+            <div class="footer-col-heading"> Socials </div>
+            {% include social.html %}
+        </div>
+
+    </div>
+    
+    <div id="copyright">
+        {% if site.copyright %}
+            &copy; {{ site.copyright }} {{ 'now' | date: "%Y" }}
+        {% endif %}
+    </div>
+
+</footer>

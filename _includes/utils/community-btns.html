@@ -1,0 +1,35 @@
+<div class="card card-secondary community-wrapper block-100" data-aos="zoom-in">
+    
+    <div class="heading-wrapper">
+        <h2>Community</h2>
+    </div>
+   
+    <div class="icon-wrapper">
+        {% if site.data.social_defaults.github %}
+        {% assign social = site.data.social_defaults.github %}
+        <div class="">
+            <a href="{{ social.url }}" target="_blank">
+                <img src="/assets/images/third-party/{{ social.icon }}" alt="{{ social.name }} Logo">
+            </a>
+        </div> 
+        {% endif %}
+        
+        {% if site.data.social_defaults.linkedin %}
+        {% assign social = site.data.social_defaults.linkedin %}
+            <div class="">
+                <a href="{{ social.url }}" target="_blank">
+                    <img src="/assets/images/third-party/{{ social.icon }}" alt="{{ social.name }} Logo">
+                </a>
+            </div> 
+        {% endif %}
+
+        {% if site.data.social_defaults.twitter %}
+        {% assign social = site.data.social_defaults.twitter %}
+        <div class="">
+            <a href="{{ social.url }}" target="_blank">
+                <img src="/assets/images/third-party/{{ social.icon }}" alt="{{ social.name }} Logo">
+            </a>
+        </div> 
+        {% endif %}
+    </div>
+</div>

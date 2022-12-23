@@ -1,0 +1,240 @@
+@font-face {
+	font-family: "OpenSans";
+	src: url("/assets/fonts/OpenSans-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("/assets/fonts/Roboto-Regular.ttf");
+}
+
+@font-face {
+	font-family: "SourceSansPro";
+	src: url("/assets/fonts/SourceSansPro-Regular.ttf");
+}
+
+@font-face {
+	font-family: "Poppins";
+	src: url("/assets/fonts/Poppins-Regular.ttf");
+}
+
+
+
+$header_height: 5em;
+
+// Font
+$default-text-fonts: "OpenSans";
+
+
+// Color Variables
+$standard-black: #000;
+$standard-white: #fff;
+
+// Dark mode
+$dark-mode-black: #0d1117;
+$dark-mode-black-buttons: #161b22 ;
+
+// Light Variables
+$light-backgroundcolor: $standard-white;
+$light-header-backgroundcolor: $standard-white;
+
+//
+$light-font-color: $standard-black;
+$light-text-underline: #031D44;
+
+$light-primarycolor: #216876;
+$light-secondarycolor: #31AEC4;
+
+// Dark Variables
+$dark-backgroundcolor: #242a35;
+$dark-header-backgroundcolor: #242a35;
+$dark-font-color: $standard-white;
+$dark-text-underline: $standard-white;
+
+
+/**
+black backpane
+#216876
+#48b2ac
+#4fa480
+#52a362
+#397356
+#447934
+
+-- primary options
+#216876
+#48B2AC
+
+black
+#070707
+#FFFFF2
+
+white backpane
+#93d8e4
+#61cbc4
+#a8e4e0
+#86d694
+#a9e1c1
+#b4e79f
+**/
+
+
+// Utils
+$border-radius: 4px;
+$light-border: 1px solid rgba($standard-black, 0.2);
+
+
+$bold-font-weight: 550;
+
+
+$light-box-shadow: 0 0.5px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+$heavy-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+$internal-content-padding: 1em 2em 2em 2em;
+
+
+/**
+FONTS
+**/
+
+body{
+    font-family: $default-text-fonts;
+}
+
+
+
+/**
+BUTTONS
+**/
+
+
+
+.btn{
+    display: block;
+    font-size: 1rem;
+    font-weight: $bold-font-weight;
+    color: $dark-font-color;
+    line-height: 1.725;
+    background-color: $light-secondarycolor;
+    border-radius: $border-radius;
+    padding: 5px 10px;
+    white-space: nowrap;
+
+    box-shadow: $light-box-shadow;
+    
+    a{
+        display: block;
+    }  
+
+    &:hover{
+        background-color: darken($light-secondarycolor, 10%); 
+    }
+}
+
+.btn-inverted{
+    
+    color: $light-font-color;
+    background-color: $light-backgroundcolor;
+
+    &:hover{
+        background-color: darken($light-backgroundcolor, 20%); 
+    }
+}
+
+/**
+Fonts
+**/
+
+.text-inverted{
+    color: $dark-font-color;
+}
+
+
+
+/**
+Cards
+**/
+
+@mixin card {
+    display: grid;
+    grid-auto-flow: row;
+    align-content: start;
+}
+
+.page-content-wrapper{
+    padding: 3em 10em;
+
+    @media screen and (max-width: 720px)  {
+        padding: 1em;
+    }
+    
+}
+
+.card-flow{
+    display: grid;
+    grid-auto-flow: row;
+    gap: 5em;
+    grid-template-columns: repeat(6 , 1fr);
+
+    @media screen and (max-width: 720px)  {
+        row-gap: 2em;
+        column-gap: 2em;
+    }
+}
+
+.card {
+    box-shadow: $light-box-shadow;
+    //border: $light-border;
+    border-radius: $border-radius;
+
+    padding: $internal-content-padding;
+
+    background-color: $light-backgroundcolor;
+
+    h2 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-weight: 550;
+    }
+
+    p {
+        margin: 0.3em 0;
+    }
+}
+
+.card-secondary{
+    background-color: lighten($light-secondarycolor, 45%);
+}
+
+.block-33{
+    grid-column: span 2;
+    @include card;
+
+    @media screen and (max-width: 1080px)  {
+        grid-column: span 6;
+    }
+}
+
+.block-50{
+    grid-column: span 3;
+    @include card;
+
+    @media screen and (max-width: 1080px)  {
+        grid-column: span 6;
+    }
+}
+
+.block-100{
+    grid-column: span 6;
+    @include card;
+}
+
+
+/**
+IMG
+**/
+
+img{
+    width: 100%;
+    height: auto;
+}

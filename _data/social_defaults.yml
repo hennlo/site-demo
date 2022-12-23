@@ -1,0 +1,21 @@
+# This file contains meta data for various social media sites
+twitter:
+  name: Twitter
+  icon: twitter-logo-blue.svg
+  url: 'https://twitter.com/polypheny'
+
+youtube:
+  name: YouTube
+  icon: youtube_social_icon_red.png
+  url: "https://www.youtube.com/channel/UClwLro6vbAr0Ok0hjLvtovA"
+
+linkedin:
+  name: LinkedIn
+  icon: linkedin-logo.png
+  url: "https://www.linkedin.com/company/polypheny"
+
+github:
+  name: GitHub
+  icon: github-logo.png
+  url: "https://www.github.com/polypheny/Polypheny-DB"
+

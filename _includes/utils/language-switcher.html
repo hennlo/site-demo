@@ -1,0 +1,27 @@
+<!-- Detect Homepage -->
+{% if page.url == "" or page.url == "/" %}
+    {% assign homepage = true %}
+{% endif %}
+
+<!-- List all centrally defined languages -->
+<ul id="language-list">
+{% for lang_hash in site.data.languages %}
+    {% assign lang = lang_hash[1] %}
+
+    <!-- Only display link of non active languages-->
+    {% if lang.short == active_lang %}
+        <li class="active_language">{{ lang.label}}</li>
+    {% else %}
+        <li>
+            {% if homepage %}
+                <a class="nav-language-option" href="/{{ lang.short }}">{{ lang.label }}</a>
+            {% else %}   
+                <a class="nav-language-option" href="{{ page.url | replace_first: active_lang, lang.short }}">{{ lang.label }}</a>
+            {% endif %}
+        </li>
+    {% endif %}
+{% endfor %}
+</ul>
+
+<script src="/assets/js/language-switcher.js"></script>
+

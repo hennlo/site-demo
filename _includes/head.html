@@ -1,0 +1,36 @@
+<head>
+
+    {% assign active_lang = {{ page.lang | default: site.default_lang }} %}
+    <html lang="{{ active_lang }}"></html>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
+    <meta name="keywords" content=" {{ active_lang }} {% if page.tags %}{{ page.tags | join: ', ' | escape }}{% endif %}">
+
+
+    {%- if page.url contains '404' or page.sitemap == false or page.url contains site.versions["dev"] and stable_pages_names contains page.name %}
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="nofollow">
+    <meta name="robots" content="noarchive">
+    <meta name="robots" content="nocache">
+    {%- comment -%} Inject robots tags for all 404 pages, all pages where the sitemap is false, or all pages in dev that are also in stable {%- endcomment -%}
+    {% else %}
+    {%- unless page.url contains site.versions["stable"] or page.url contains site.versions["dev"] or page.url contains 'releases/' or page.url contains 'advisories/' or page.path == "index.md" -%}
+    {%- comment -%} Otherwise, inject robots tags for all pages that are not in stable, releases, advisories, or any pages in dev that are not in stable. {%- endcomment -%}
+    <meta name="robots" content="noindex">
+    <meta name="robots" content="nofollow">
+    <meta name="robots" content="noarchive">
+    <meta name="robots" content="nocache">
+    {% endunless -%}
+    {%- endif -%}
+
+    {% comment %} ADD google-site-verification {% endcomment %}
+
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <link rel="canonical" href="{{ page.canonical | absolute_url }}">
+    <link rel="shortcut icon" href="{{ '/assets/images/favicon.ico' | relative_url }}" type="image/ico">
+
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>

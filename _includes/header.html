@@ -1,0 +1,71 @@
+<div id="header" class="position-fixed ">
+    
+    <!-- Detect Languages-->
+    {% include utils/detect-language.html %}
+
+    <!-- Hamburger Icon-->
+    <input class="checkbox" type="checkbox" id="checkbox"/>
+    <div class="hamburger">
+        <span class="bar bar1"></span>
+        <span class="bar bar2"></span>
+        <span class="bar bar3"></span>
+    </div>
+
+    
+    <div id="polypheny-left-header" class="header-col">
+        <!-- Logo -->
+        <div id="logo-wrapper">
+            <a href="/"> 
+                {% if site.short_title != "" %}
+                    <img class="home-logo media-600" alt="Polypheny Logo" src="/assets/images/logos/logo-symbol.svg">
+                {% else %}
+                    {% assign temp_style = "override_display" %}
+                {% endif %}
+                <img class="home-logo media-full {{ temp_style }}" alt="Polypheny Logo" src="/assets/images/logos/logo-landscape.svg">        
+            </a> 
+        </div>
+
+        <!-- Hide Logo Seperator and Short Title if not set. E.g. Homepage -->
+        {% unless site.short_title %}
+        <!-- Logo Seperator -->
+        <div class="logo-separator">|</div>
+
+        <!-- Page Title -->
+        <div id="page-title">
+            <a href="#">
+                <span>{{ site.short_title | upcase }} </span>
+            </a>
+        </div>
+        {% endunless %}
+
+    </div>
+    
+    
+    <div id="polypheny-right-header" class="header-col">
+        <!-- NavBar -->
+        <nav class="navbar">
+            {% include navmenu.html %}
+        </nav>
+
+        
+            <div id="locality" class="header-col">
+                <div class="header-options">
+                    <div id="language-selection" >
+                        <!-- Language Switcher -->
+                        <img class="world-img" alt="Language Switcher" src="/assets/images/utils/world-dark.png">
+                        <div class="language-switcher language-hidden">
+                            {% include utils/language-switcher.html %}
+                        </div>
+                    </div>
+
+                    <div id="display-theme" class="">
+                        <!-- Night/Day Theme Swith -->
+                        <img class="theme-img" alt="Dark Mode Toggle" src="/assets/images/utils/moon-symbol.png">
+                    </div>
+                </div>
+                {% include utils/get-polypheny-btn.html %}
+            </div>
+
+</div>
+
+</div>

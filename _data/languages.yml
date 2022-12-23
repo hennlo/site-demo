@@ -1,0 +1,9 @@
+en:
+  label: English
+  short: en
+  icon: 🇺🇸
+  
+de:
+  label: Deutsch
+  short: de
+  icon: 🇩🇪

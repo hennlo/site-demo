@@ -1,0 +1,31 @@
+solutions:
+  identifier: solutions
+  name: Solutions
+  url: /solutions
+
+product:
+  identifier: product
+  name: Product
+  url: /product
+
+#pricing:
+#  identifier: pricing
+#  name: Pricing
+#  url: /pricing
+
+company:
+  identifier: company
+  name: Company
+  url: /company
+
+docs:
+  identifier: docs
+  name: Documentation
+  url: https://polypheny.org/documentation/
+  external: true
+
+#resources:
+#  identifier: resources
+#  name: Resources
+#  url: /resources
+

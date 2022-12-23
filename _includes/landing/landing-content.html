@@ -1,0 +1,19 @@
+<div class="card-flow">
+    {% assign sortedCards = site.landing | sort: 'order' %}
+    {% for card in sortedCards %}
+        <div class="{{ card.classes }}" data-aos="zoom-in">
+            {% unless card.omit_heading %}
+                <h2>
+                {{ card.title }}
+                </h2>
+            {% endunless %}
+            {{ card.content }}
+        </div>
+    {% endfor %}
+
+    <div class="btn-wrapper">
+        {% include utils/get-polypheny-btn.html %}
+    </div>
+
+    {% include utils/community-btns.html %}
+</div>

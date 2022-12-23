@@ -1,0 +1,26 @@
+<div class="hero-wrapper">
+    <div class="description-wrapper">
+        <div class="logo-wrapper">
+            <img src="/assets/images/logos/logo-transparent-filled_white.png" alt="Polypheny Logo">
+            <!-- <img src="/assets/images/logos/logo-transparent.png" alt="Polypheny Logo"> -->
+        </div>
+        
+        <div class="description text-inverted">
+            <p>
+                <!-- Detect Languages-->
+                {% include utils/detect-language.html %}
+
+                {{ site.data.translation.hero-text[active_lang] }}
+            </p>
+        </div>
+
+        <div class="action-wrapper">
+            <div class="btn btn-inverted"><a href="https://github.com/polypheny/Polypheny-DB/releases" >Community Edition</a></div>
+            <div class="btn btn-inverted"><a href="https://github.com/polypheny/Polypheny-DB/releases" >Enterprise Edition</a></div>
+        </div>
+    </div>
+    <div id="chart-area" class="chart-area"></div>
+</div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="/assets/js/hero-animation.js"></script>
