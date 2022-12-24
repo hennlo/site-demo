@@ -13,6 +13,6 @@ order: 6
 - Easily utelize multipe different data models for existing data to gather new insight
 - Use the custom designed user interface with minimal additional coding required
 - Runs on Windows, Linux and MacOS
-{: .feature-list}
+{: .feature-list.block-50}
 
-![advantages](/assets/images/landing/Advantages.svg){: .advantages-logo}
+![advantages](/assets/images/landing/Advantages.svg){: .advantages-logo.block-50}

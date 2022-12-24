@@ -876,7 +876,8 @@ a.anchor:hover{
   .content-inner-wrapper{
     display: grid;
     grid-template-columns: max-content 1fr;
-    justify-items: center;
+    //justify-items: center;
+    grid-auto-flow: column;
 
     img {
       width: 10vw;
