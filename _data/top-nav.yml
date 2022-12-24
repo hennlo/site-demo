@@ -1,22 +1,22 @@
-solutions:
-  identifier: solutions
-  name: Solutions
-  url: /solutions
-
 product:
   identifier: product
   name: Product
-  url: /product
+  url: /product.html # todo change back for release
 
-#pricing:
-#  identifier: pricing
-#  name: Pricing
-#  url: /pricing
+solutions:
+  identifier: solutions
+  name: Solutions
+  url: /solutions.html # todo change back for release
+
+pricing:
+  identifier: pricing
+  name: Pricing
+  url: /pricing.html # todo change back for release
 
 company:
   identifier: company
   name: Company
-  url: /company
+  url: /company.html # todo change back for release
 
 docs:
   identifier: docs

@@ -1,10 +1,20 @@
 <!-- Main Menu navigation -->
 <div class="navbar-list">
     {% for nav-item in site.data.top-nav %}
+
+        {% if page.url contains nav-item[1].url %} 
+        
+            {% assign temp_classes = "active" %}
+
+        {% else %}
+            {% assign temp_classes = "" %}
+        
+        {% endif %}
+
         {% if nav-item[1].external %}
             <a class="navbar-item" href="{{ nav-item[1].url }}">{{ nav-item[1].identifier }}</a>
         {% else %}
-            <a class="navbar-item" href="/{{ active_lang}}{{ nav-item[1].url }}">{{ nav-item[1].identifier }}</a>
+            <a class="navbar-item {{ temp_classes }}" href="/{{ active_lang}}{{ nav-item[1].url }}">{{ nav-item[1].identifier }}</a>
         {% endif %}
     {% endfor %}
 </div>

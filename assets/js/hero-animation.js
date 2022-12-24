@@ -298,11 +298,11 @@ function getImage(d) {
     var n = data.nodes.filter( n => n.id === d.id)[0]
     // console.log(n)
     if( n.type === 'doc'){
-      return "https://www.svgrepo.com/show/124243/document.svg";
+      return "assets/images/hero/document.svg";
     }else if( n.type === 'db' ){
-      return "https://www.svgrepo.com/show/231121/database.svg";
+      return "assets/images/hero/database.svg";
     }else if( n.type === 'graph'){
-      return "https://www.svgrepo.com/show/189200/oval-circle.svg";
+      return "assets/images/hero/oval-circle.svg";
     }
-    return "https://www.svgrepo.com/show/25494/document.svg";
+    return "assets/images/hero/document.svg";
 }

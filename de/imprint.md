@@ -1,13 +1,15 @@
 ---
-layout: default
-title: "Imprint"
+layout: page
+title: "Impressum"
 ---
 
+<div class="card card-secondary block-100">
 
 ## Polypheny GmbH
 
 ### Kontakt Information
  
-* +41 12 346 78 90 
 * {{ site.contact_email |escape }}
 * Dornacherstrasse 192, 4053 Basel CH
+
+</div>

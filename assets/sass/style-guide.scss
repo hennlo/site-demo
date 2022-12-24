@@ -23,7 +23,8 @@
 $header_height: 5em;
 
 // Font
-$default-text-fonts: "OpenSans";
+$font-body: "SourceSansPro","OpenSans", "Roboto", Helvetica,Arial,sans-serif;
+$font-display: "Poppins";
 
 
 // Color Variables
@@ -32,7 +33,7 @@ $standard-white: #fff;
 
 // Dark mode
 $dark-mode-black: #0d1117;
-$dark-mode-black-buttons: #161b22 ;
+$dark-mode-black-utilities: #161b22 ;
 
 // Light Variables
 $light-backgroundcolor: $standard-white;
@@ -51,6 +52,10 @@ $dark-header-backgroundcolor: #242a35;
 $dark-font-color: $standard-white;
 $dark-text-underline: $standard-white;
 
+
+//Deafult Color
+$text-color: $standard-black;
+$bkg-color: $standard-white;
 
 /**
 black backpane
@@ -93,20 +98,65 @@ $heavy-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 $internal-content-padding: 1em 2em 2em 2em;
 
 
+
+
+/**
+THEMES
+**/
+
+/* body {
+    $text-color: $standard-black;
+    $bkg-color: $standard-white;
+}
+
+body.dark-theme {
+    $text-color: $standard-white;
+    $bkg-color: $dark-backgroundcolor;
+}
+
+
+@media (prefers-color-scheme: dark) {
+    
+    body {
+        $text-color: $standard-white;
+        $bkg-color: $dark-backgroundcolor;
+    }
+    body.light-theme {
+        $text-color: $standard-black;
+        $bkg-color: $standard-white;
+    }
+}
+
+
+body {
+    background-color: $bkg-color;
+}
+
+h1, p {
+    color: $text-color;
+} */
+
+
 /**
 FONTS
 **/
 
 body{
-    font-family: $default-text-fonts;
+    font-family: $font-body;
 }
 
+h1, h2, h3, h4, h5{
+    font-family: $font-display;
+    color: $light-primarycolor;
+}
 
 
 /**
 BUTTONS
 **/
+p{
 
+}
 
 
 .btn{
@@ -122,6 +172,12 @@ BUTTONS
 
     box-shadow: $light-box-shadow;
     
+    // Necessary for BUTTON utils such as simple-btn.html
+    p{
+        padding: 0;
+        margin: 0;
+    } 
+
     a{
         display: block;
     }  
@@ -149,6 +205,10 @@ Fonts
     color: $dark-font-color;
 }
 
+.text-centered {
+    text-align: center;
+}
+
 
 
 /**
@@ -161,7 +221,7 @@ Cards
     align-content: start;
 }
 
-.page-content-wrapper{
+.content-wrapper{
     padding: 3em 10em;
 
     @media screen and (max-width: 720px)  {
@@ -169,6 +229,7 @@ Cards
     }
     
 }
+
 
 .card-flow{
     display: grid;
@@ -200,10 +261,55 @@ Cards
     p {
         margin: 0.3em 0;
     }
+
+    hr {
+        width: 90%;
+    }
+
+    ul.feature-list {
+        
+        text-align: left;
+        //list-style: circle !important;
+
+        li::marker{
+            color: $light-secondarycolor;
+        }
+
+        &.small {
+            font-size: 0.9em;
+        }
+
+        &.large {
+            font-size: 1.1em;
+        }   
+
+    }
+
+    .btn-wrapper{
+        grid-column: span 1;
+
+        .btn{
+            margin-top: 0.5em;
+            padding: 0px 8px;
+        }
+    }
+
+    .disclaimer-wrapper{
+        padding: 0.1em;
+        font-size: 0.8em;
+    }
 }
 
 .card-secondary{
     background-color: lighten($light-secondarycolor, 45%);
+}
+
+.block{
+    h2 {
+        margin-top: 0;
+        margin-bottom: 12px;
+        font-weight: 550;
+    }
 }
 
 .block-33{
@@ -229,6 +335,13 @@ Cards
     @include card;
 }
 
+.banner{
+    width: 100%;
+    margin: 4em 0;
+    padding: 2em 0;
+    background-color: $standard-white;
+    box-shadow: $light-box-shadow;
+}
 
 /**
 IMG
@@ -237,4 +350,51 @@ IMG
 img{
     width: 100%;
     height: auto;
+}
+
+
+/**
+ICONs
+**/
+
+.icon-list{
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+  
+    padding-top: 1em;
+    margin: 0.2em 1em;
+
+    &.vertical{
+        flex-direction: column;
+        
+        img {
+            margin-top: 2em;
+        }
+    }
+
+    img {
+        margin: 0 1em;
+
+        width: auto;
+        display: inline-block;
+        object-fit: contain;
+
+
+        &.small-scaling {
+            max-height: 50px;
+        }
+
+        &.medium-scaling {
+            max-height: 75px;
+        }
+
+        &.large-scaling {
+            max-height: 100px;
+        }
+
+    }
 }

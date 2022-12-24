@@ -8,6 +8,7 @@
     <meta name="description" content="{% if page.summary %}{{ page.summary | strip_html | strip_newlines | truncate: 160 }}{% endif %}">
     <meta name="keywords" content=" {{ active_lang }} {% if page.tags %}{{ page.tags | join: ', ' | escape }}{% endif %}">
 
+    <meta name="color-scheme" content="dark light">
 
     {%- if page.url contains '404' or page.sitemap == false or page.url contains site.versions["dev"] and stable_pages_names contains page.name %}
     <meta name="robots" content="noindex">
@@ -29,7 +30,7 @@
 
     <title>{{ page.title }} | {{ site.title }}</title>
     <link rel="canonical" href="{{ page.canonical | absolute_url }}">
-    <link rel="shortcut icon" href="{{ site.baseurl }}/assets/images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/images/favicon.ico?" type="image/x-icon">
 
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">

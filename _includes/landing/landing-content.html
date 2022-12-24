@@ -1,4 +1,4 @@
-<div class="card-flow">
+<div class="content-wrapper card-flow">
     {% assign sortedCards = site.landing | sort: 'order' %}
     {% for card in sortedCards %}
         <div class="{{ card.classes }}" data-aos="zoom-in">
@@ -7,13 +7,13 @@
                 {{ card.title }}
                 </h2>
             {% endunless %}
-            {{ card.content }}
+            <div class="content-inner-wrapper {{ inner_classes }}">
+                {{ card.content }}
+            </div>
         </div>
     {% endfor %}
 
-    <div class="btn-wrapper">
-        {% include utils/get-polypheny-btn.html %}
-    </div>
+    {% include utils/simple-btn.html url="https://github.com/polypheny/Polypheny-DB/releases" display-text="Get Polypheny" css-classes="get-polpyheny-box" %}
 
     {% include utils/community-btns.html %}
 </div>

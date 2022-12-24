@@ -1,10 +1,9 @@
 @import "style-guide";
 @import "hero";
+@import "theme";
 
 $backgroundColor: #ffffff;
 $bodyColor: #000000;
-$bodyFont: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-
 
 
 
@@ -18,13 +17,12 @@ $bodyFont: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-seri
 
 html {
   height: 100%;
+  color: $standard-black;
 }
 
 
+
 body {
-  background: $backgroundColor;
-  color: $bodyColor;
-  font-family: $bodyFont;
 
   margin: 0;
   height: 100%;
@@ -198,6 +196,11 @@ main ul {
   align-items: center;
   justify-content: space-between;
   padding: .5rem 1rem;
+
+  .active{
+    color: $light-primarycolor;
+  }
+
 }
 
 
@@ -270,6 +273,7 @@ a.navbar-item:hover::before {
 .header-options{
   display: flex;
   align-items: center;
+  margin-top: 0.5em;
 }
 
 #language_selection {
@@ -656,8 +660,9 @@ a.navbar-item:hover::before {
 **
 **/
 .site-footer{
-  background-color:gray;
-
+  background-color: $dark-backgroundcolor;
+  color: $standard-white;
+  font-size: 0.9em;
 
   
   display: flex;
@@ -706,6 +711,18 @@ a.navbar-item:hover::before {
   font-weight: 550;
 }
 
+hr {
+  display: block;
+  unicode-bidi: isolate;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 1px;
+}
+
 .footer-col > ul {
   padding-left: 0;
   display: flex;
@@ -736,7 +753,8 @@ ul.social-media-list > li{
 }
 
 #copyright{
-  font-size: 0.9em;
+  font-size: 0.8em;
+  padding-bottom: 0.5em;
 }
 /****/
 
@@ -796,17 +814,21 @@ a.anchor:hover{
 
   svg .page-background{
     fill: $light-primarycolor;
-    
+    //fill: lighten($light-primarycolor, 68%);
   }
 }
+
+
+
 
 .btn-wrapper{
   display: flex;
   align-items: center;
   justify-content: center;
   grid-column: span 6;
-  
 }
+
+
 
 .community-wrapper{
 
@@ -833,9 +855,41 @@ a.anchor:hover{
     div{
       width: 50px;
     }
+
+    img {
+      transition: transform .2s;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+    }
+  
   }
 
 
 }
 
+// landing advantages
 
+.advantages-wrapper{
+  .content-inner-wrapper{
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    justify-items: center;
+
+    img {
+      width: 10vw;
+    }
+  }
+}
+
+
+// landing cases
+
+.mini-logo {
+  width: 5rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
